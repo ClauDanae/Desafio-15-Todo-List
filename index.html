@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo List</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script src="https://kit.fontawesome.com/e3bb75d4b1.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <h1><b>Todo List</b></h1>
+    <hr>
+    <div class="task_control">
+        <div style="flex:1">
+            <label for="hw">Nueva Tarea</label>
+            <input type="text" id="hw">
+        </div>
+        <button onclick="agregarhw()">Agregar</button>
+    </div>
+    <div class="tcontainer">
+        <div>
+            <p id="total">Total: 0</p>
+            <p id="completed_total">Realizadas: 0</p>
+        </div>
+        <div>
+            <table id="hw_table">
+            </table>
+        </div>
+    </div>
+    <script src="assets/js/index.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,50 @@
+body {
+    background-color: #ececec;
+    padding: 0 20% 0 20%;
+}
+
+label,
+input {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.task_control {
+    display: flex;
+    gap: 1rem;
+    padding: 0.8rem;
+    align-items: flex-end;
+}
+
+button {
+    background-color: #1a7742;
+    /* Green */
+    border: none;
+    border-radius: 0.3rem;
+    color: white;
+    padding: 7px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+}
+
+table,
+th,
+td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    text-align: center;
+    border: none;
+}
+
+.tcontainer {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+}
+
+.tcontainer table {
+    min-width: 20rem;
+    margin-top: 0.9rem;
+}

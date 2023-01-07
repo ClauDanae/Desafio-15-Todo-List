@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Lista de Tareas</title>
+</head>
+
+<body>
+    <input type="text" name="invitado" id="invitado">
+    <button id="add">Agregar Tarea</button>
+    <ul id="listado">
+
+    </ul>
+    <span id="cuenta-tareas"></span>
+    <script>
+        const invitados = []
+        let btnAgregar = document.querySelector("#add")
+        btnAgregar.addEventListener("click", () => {
+            /* Agregamos el invitado al arreglo */
+            let invitadoInput = document.querySelector("#invitado")
+            const nuevoInvitado = invitadoInput.value
+            if (
+                nuevoInvitado == ""
+            ) {
+                return
+            }
+            invitados.push({ id: (new Date()).toLocaleTimeString("en-us", { hour12: false, hour: '2-digit', minute: '2-digit' }), nombre: nuevoInvitado })
+            invitadoInput.value = ""
+            /* Actualizamos la información en el HTML */
+            let html = ""
+            for (let invitado of invitados) {
+                html += `<li>${invitado.nombre} , ${invitado.id}</li>`;
+            }
+            let listaDeInvitados = document.querySelector("#listado")
+            listaDeInvitados.innerHTML = html;
+        })
+    </script>
+</body>
+
+</html>

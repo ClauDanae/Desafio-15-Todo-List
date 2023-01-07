@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input id="nuevoInvitado"> <!-- 1 -->
+    <button id="agregarInvitado">Agregar</button> <!-- 2 -->
+    <h3>Invitados: </h3>
+    <ul id="invitados"></ul> <!-- 3 -->
+    <script>
+        const listaDeInvitados = document.querySelector("#invitados")
+        const invitadoInput = document.querySelector("#nuevoInvitado")
+        const btnAgregar = document.querySelector("#agregarInvitado")
+
+        const invitados = []
+        btnAgregar.addEventListener("click", () => {
+            /* Agregamos el invitado al arreglo */
+            const nombreInvitado = invitadoInput.value
+            invitados.push(nombreInvitado)
+            invitadoInput.value = ""
+            /* Actualizamos la información en el HTML */
+            let html = ""
+            for (let invitado of invitados) {
+                html += `<li>${invitado}</li>`;
+            }
+            listaDeInvitados.innerHTML = html;
+        })
+    </script>
+</body>
+
+</html>
